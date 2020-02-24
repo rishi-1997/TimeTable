@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'Time_Table_app/base.html' %}
+{% block body_block %}
+   <div align="center">
+   <h1>Update Data</h1>
+   <form method="post">
+       {% csrf_token %}
+       <table>
+           <tr>
+               <td>Time</td>
+               <td><input type="text" name="time" value="{{ timetable.time }}"></td>
+           </tr>
+           <tr>
+               <td>Subject</td>
+               <td><input type="text" name="subject" value="{{ timetable.subject }}"></td>
+           </tr>
+           <tr>
+               <td>Topics</td>
+               <td><input type="text" name="topics" value="{{ timetable.topics }}"></td>
+           </tr>
+
+       </table>
+       <br>
+       <input type="submit" class="btn btn-primary" value="Update">
+   </form>
+   </div>
+
+{% endblock %}

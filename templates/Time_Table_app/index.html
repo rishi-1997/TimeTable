@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'Time_Table_app/base.html' %}
+{% block body_block %}
+    <div align="center">
+    <h1>Time Table</h1>
+    <table border="2">
+    <thead>
+    <th>Time</th>
+    <th>Subject</th>
+    <th>Topics</th>
+    <th>Actions</th>
+    </thead>
+    {% for x in timetable %}
+        <tr>
+        <td>{{ x.time }}</td>
+        <td>{{ x.subject }}</td>
+        <td>{{ x.topics }}</td>
+            <td><a href="/update/{{ x.id }}">Update</a> | <a href="/delete/{{ x.id }}">Delete</a> </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <a type="submit" href='/create/' class="btn btn-primary">Add Data</a>
+    </div>
+
+{% endblock %}
